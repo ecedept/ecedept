@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> QUIZ | RESULT </title>
+	<link rel="stylesheet" href="css-js/reset_stylesheet.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/af6f00cd8e.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css-js/portrait_stylesheet.css" media="screen and (orientation: portrait)">
+	<link rel="stylesheet" href="css-js/landscape_stylesheet.css" media="screen and (orientation: landscape)">
+</head>
+
+<body>
+	<!--   HEADER   -->
+	<div class="slanting">
+		<div class="s-up">
+			<header class="header">
+				<div class="h-name">
+					<p class="hn-main"> Velammal College </p>
+					<p class="hn-sub"> of Engineering and Technology </p> </div>
+				<div class="h-icon"> <img class="hi-logo" src="other-images/logo.png"> </div>
+			</header>
+		</div>
+	</div>
+
+	<!--   CONTAINER   -->
+	<div class="container">
+		<!--   DEPARTMENT BANNER   -->
+		<section class="section" style="background-image: url('other-images/ece.png');"> Electronics <br> And Communication <br> Engineering </section>
+
+		<!--   QUIZ RESULT   -->
+		<h3 class="m-heading q-margins" id="res3"></h3>
+		<div class="result">
+			<div class="r-bgbox"> <p class="rb-content"> Thank you for attending the quiz... </p> </div>
+			<div class="r-display">
+				<div class="rd-content">
+					<div class="rd-flex">
+						<div class="rdf-left"> <p> Name </p> </div>
+						<div class="rdf-right"> <p id="res1"></p> </div>
+					</div>
+					<div class="rd-flex">
+						<div class="rdf-left"> <p> Score </p> </div>
+						<div class="rdf-right"> <p id="res2"></p> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--   BACK BUTTONS   -->
+		<div class="back">
+			<ul class="b-btn"> <li> <a class="bb-a nm-a" href="index.html"> Back to Home Page </a> </li> </ul>
+		</div>
+	</div>
+
+	<!--   FOOTER   -->
+	<div class="slanting">
+		<div class="s-down"> <footer class="footer"> Designed and Developed by the students of ECE Department </footer> </div>
+	</div>
+
+	<!-- JAVASCRIPT   -->
+	<script>
+		var res = localStorage.getItem("textvalue");
+		var result = res.split(", ");
+		var l = result.length;
+		var name = result[0];
+		var resl = result[1] + " / 5";
+		var subj = result[2];
+		document.getElementById("res1").innerHTML = name;
+		document.getElementById("res2").innerHTML = resl;
+		document.getElementById("res3").innerHTML = subj;
+	</script>
+</body>
+</html>

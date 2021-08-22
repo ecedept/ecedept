@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title> QUIZ | EC-I </title>
+	<link rel="stylesheet" href="css-js/reset_stylesheet.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/af6f00cd8e.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css-js/portrait_stylesheet.css" media="screen and (orientation: portrait)">
+	<link rel="stylesheet" href="css-js/landscape_stylesheet.css" media="screen and (orientation: landscape)">
+</head>
+<body>
+	<!--   HEADER   -->
+	<div class="slanting">
+		<div class="s-up">
+			<header class="header">
+				<div class="h-name">
+					<p class="hn-main"> Velammal College </p>
+					<p class="hn-sub"> of Engineering and Technology </p> </div>
+				<div class="h-icon"> <img class="hi-logo" src="other-images/logo.png"> </div>
+			</header>
+		</div>
+	</div>
+
+	<!--   CONTAINER   -->
+	<div class="container">
+		<!--   DEPARTMENT BANNER   -->
+		<section class="section" style="background-image: url('other-images/ece.png');"> Electronics <br> And Communication <br> Engineering </section>
+
+		<!--   BACK BUTTONS   -->
+		<div class="back">
+			<ul class="b-btn"> <li> <a class="bb-a nm-a" href="index.html"> Back to Home Page </a> </li> </ul>
+		</div>
+
+		<!--   QUIZ FORM   -->
+		<h3 class="m-heading q-margins"> Quiz | Electronic Circuits - I </h3>
+		<form class="quiz" id="quiz-reset" action="quiz-result.html" target="_self">
+			<input class="q-details" type="text" id="q-name" placeholder="Name" required>
+			<input class="q-details" type="email" id="q-mail" placeholder="Email Id" required>
+
+			<!--   QUESTION 01   -->
+			<div class="q-questions"> 1. The relationship between input and output voltage of a common emitter amplifier is <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q1"> Always unity </li>
+					<li class="qqo-list"> <input type="radio" name="q1"> Always positive </li>
+					<li class="qqo-list"> <input type="radio" name="q1"> Always negative </li>
+					<li class="qqo-list"> <input type="radio" name="q1"> Less than unity </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 02   -->
+			<div class="q-questions"> 2. Which of the following amplifier is considered linear? <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q2"> Class A </li>
+					<li class="qqo-list"> <input type="radio" name="q2"> Class B </li>
+					<li class="qqo-list"> <input type="radio" name="q2"> Class C </li>
+					<li class="qqo-list"> <input type="radio" name="q2"> Either A or B </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 03   -->
+			<div class="q-questions"> 3. A two-transistor class B power amplifier is commonly called <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q3"> Push-pull amplifier </li>
+					<li class="qqo-list"> <input type="radio" name="q3"> Dual amplifier </li>
+					<li class="qqo-list"> <input type="radio" name="q3"> Symmetrical amplifier </li>
+					<li class="qqo-list"> <input type="radio" name="q3"> Differential amplifier </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 04   -->
+			<div class="q-questions"> 4. A transistor amplifier has high output impedance because <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q4"> Emitter is heavily doped </li>
+					<li class="qqo-list"> <input type="radio" name="q4"> Collector is wider than emitter or base </li>
+					<li class="qqo-list"> <input type="radio" name="q4"> Collector has reverse bias </li>
+					<li class="qqo-list"> <input type="radio" name="q4"> Emitter has forward bias </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 05   -->
+			<div class="q-questions"> 5. The coupling capacitor Cc must be large enough to ___________ in an RC coupling scheme. <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q5"> Pass dc between the stages </li>
+					<li class="qqo-list"> <input type="radio" name="q5"> Dissipate high power </li>
+					<li class="qqo-list"> <input type="radio" name="q5"> Prevent attenuation of low frequency </li>
+					<li class="qqo-list"> <input type="radio" name="q5"> Prevent attenuation of high frequency </li>
+				</ul>
+			</div>
+
+			<!--   QUIZ FORM BUTTONS   -->
+			<div class="q-buttons">
+				<input class="qb-btn" type="submit" value="Submit" onclick="q_validate()">
+				<input class="qb-btn" type="reset" value="Reset">
+			</div>
+		</form>
+		<p id="q-res"></p>
+	</div>
+
+	<!--   FOOTER   -->
+	<div class="slanting">
+		<div class="s-down"> <footer class="footer"> Designed and Developed by the students of ECE Department </footer> </div>
+	</div>
+
+	<!--   JAVASCRIPT   -->
+	<script>
+		function q_validate() {
+			var name = document.getElementById("q-name").value;
+			var res = 0;
+			if(document.getElementsByName("q1")[2].checked)
+				res += 1;
+			if(document.getElementsByName("q2")[3].checked)
+				res += 1;
+			if(document.getElementsByName("q3")[0].checked)
+				res += 1;
+			if(document.getElementsByName("q4")[2].checked)
+				res += 1;
+			if(document.getElementsByName("q5")[2].checked)
+				res += 1;
+			var tres = name + ", " + (res.toString()) + ", Quiz | Electronic Circuits - I ";
+			localStorage.setItem("textvalue", tres);
+		}
+	</script>
+</body>
+</html>

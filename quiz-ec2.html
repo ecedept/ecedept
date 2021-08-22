@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title> QUIZ | EC-II </title>
+	<link rel="stylesheet" href="css-js/reset_stylesheet.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/af6f00cd8e.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css-js/portrait_stylesheet.css" media="screen and (orientation: portrait)">
+	<link rel="stylesheet" href="css-js/landscape_stylesheet.css" media="screen and (orientation: landscape)">
+</head>
+<body>
+	<!--   HEADER   -->
+	<div class="slanting">
+		<div class="s-up">
+			<header class="header">
+				<div class="h-name">
+					<p class="hn-main"> Velammal College </p>
+					<p class="hn-sub"> of Engineering and Technology </p> </div>
+				<div class="h-icon"> <img class="hi-logo" src="other-images/logo.png"> </div>
+			</header>
+		</div>
+	</div>
+
+	<!--   CONTAINER   -->
+	<div class="container">
+		<!--   DEPARTMENT BANNER   -->
+		<section class="section" style="background-image: url('other-images/ece.png');"> Electronics <br> And Communication <br> Engineering </section>
+
+		<!--   BACK BUTTONS   -->
+		<div class="back">
+			<ul class="b-btn"> <li> <a class="bb-a nm-a" href="index.html"> Back to Home Page </a> </li> </ul>
+		</div>
+
+		<!--   QUIZ FORM   -->
+		<h3 class="m-heading q-margins"> Quiz | Electronic Circuits - II </h3>
+		<form class="quiz" id="quiz-reset" action="quiz-result.html" target="_self">
+			<input class="q-details" type="text" id="q-name" placeholder="Name" required>
+			<input class="q-details" type="email" id="q-mail" placeholder="Email Id" required>
+
+			<!--   QUESTION 01   -->
+			<div class="q-questions"> 1. If a high degree of selectivity is desired, then double-tuned circuit should have ______ coupling. <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q1"> Loose </li>
+					<li class="qqo-list"> <input type="radio" name="q1"> Tight </li>
+					<li class="qqo-list"> <input type="radio" name="q1"> Critical </li>
+					<li class="qqo-list"> <input type="radio" name="q1"> None of the above </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 02   -->
+			<div class="q-questions"> 2. In series resonance, there is __________. <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q2"> Voltage amplification </li>
+					<li class="qqo-list"> <input type="radio" name="q2"> Current amplification </li>
+					<li class="qqo-list"> <input type="radio" name="q2"> Both voltage and current amplification </li>
+					<li class="qqo-list"> <input type="radio" name="q2"> None of the above </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 03   -->
+			<div class="q-questions"> 3. If the feedback voltage and the output voltage are given as 10v and 4v. Find the gain of the feedback
+circuit in voltage-series feedback amplifier? <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q3"> 40V </li>
+					<li class="qqo-list"> <input type="radio" name="q3"> 2.5V </li>
+					<li class="qqo-list"> <input type="radio" name="q3"> 3V </li>
+					<li class="qqo-list"> <input type="radio" name="q3"> 6.2V </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 04   -->
+			<div class="q-questions"> 4. In a negative feedback amplifier, current sampling <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q4"> Tends to decrease the output resistance </li>
+					<li class="qqo-list"> <input type="radio" name="q4"> Produces the same effect on output resistance as voltage sampling </li>
+					<li class="qqo-list"> <input type="radio" name="q4"> Tends to increase the output resistance </li>
+					<li class="qqo-list"> <input type="radio" name="q4"> Does not alter the output resistance </li>
+				</ul>
+			</div>
+
+			<!--   QUESTION 05   -->
+			<div class="q-questions"> 5. What are oscillators? <br>
+				<ul class="qq-options">
+					<li class="qqo-list"> <input type="radio" name="q5"> Switching circuits </li>
+					<li class="qqo-list"> <input type="radio" name="q5"> Converts dc to ac </li>
+					<li class="qqo-list"> <input type="radio" name="q5"> Converts ac to dc </li>
+					<li class="qqo-list"> <input type="radio" name="q5"> Filter circuits </li>
+				</ul>
+			</div>
+
+			<!--   QUIZ FORM BUTTONS   -->
+			<div class="q-buttons">
+				<input class="qb-btn" type="submit" value="Submit" onclick="q_validate()">
+				<input class="qb-btn" type="reset" value="Reset">
+			</div>
+		</form>
+		<p id="q-res"></p>
+	</div>
+
+	<!--   FOOTER   -->
+	<div class="slanting">
+		<div class="s-down"> <footer class="footer"> Designed and Developed by the students of ECE Department </footer> </div>
+	</div>
+
+	<!--   JAVASCRIPT   -->
+	<script>
+		function q_validate() {
+			var name = document.getElementById("q-name").value;
+			var res = 0;
+			if(document.getElementsByName("q1")[0].checked)
+				res += 1;
+			if(document.getElementsByName("q2")[0].checked)
+				res += 1;
+			if(document.getElementsByName("q3")[1].checked)
+				res += 1;
+			if(document.getElementsByName("q4")[2].checked)
+				res += 1;
+			if(document.getElementsByName("q5")[1].checked)
+				res += 1;
+			var tres = name + ", " + (res.toString()) + ", Quiz | Electronic Circuits - II ";
+			localStorage.setItem("textvalue", tres);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> ECE | EVENT CALENDAR </title>
+	<link rel="stylesheet" href="css-js/reset_stylesheet.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="stylesheet" href="calendar/evo-calendar.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="calendar/evo-calendar.midnight-blue.min.css">
+	<script src="https://kit.fontawesome.com/af6f00cd8e.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css-js/portrait_stylesheet.css" media="screen and (orientation: portrait)">
+	<link rel="stylesheet" href="css-js/landscape_stylesheet.css" media="screen and (orientation: landscape)">
+</head>
+<body>
+	<!--   HEADER   -->
+	<div class="slanting">
+		<div class="s-up">
+			<header class="header">
+				<div class="h-name">
+					<p class="hn-main"> Velammal College </p>
+					<p class="hn-sub"> of Engineering and Technology </p> </div>
+				<div class="h-icon"> <img class="hi-logo" src="other-images/logo.png"> </div>
+			</header>
+		</div>
+	</div>
+
+	<!--   CONTAINER   -->
+	<div class="container">
+		<!--   DEPARTMENT BANNER   -->
+		<section class="section" style="background-image: url('other-images/ece.png');"> Electronics <br> And Communication <br> Engineering </section>
+
+		<!--   NAVIGATION BAR   -->
+		<nav class="nav-bar nc-spacing">
+			<p class="n-text"> ECE Dept. Association </p>
+			<div class="n-button"> <button class="nbc-btn" id="nb-btn"> <p class="nb-hidden nbc-hidden"> ☰ </p> <p class="nb-right"> Calendar </p> </button> </div>
+			<ul class="nc-menu" id="n-menu">
+				<li> <a class="nm-a" href="index.html"> Home </a> </li>
+				<li> <a class="nm-a" href="hod-desk.html"> HOD's Desk </a> </li>
+				<li> <a class="nm-a" href="vision-mission.html"> Vision & Mission </a> </li>
+				<li> <a class="nm-a" href="peo-pso.html"> PEO & PSO </a> </li>
+				<li> <a class="nm-a" href="programme-outcomes.html"> Programme Outcomes </a> </li>
+				<li> <a class="nm-a" href="project-research.html"> Project & Research </a> </li>
+				<li> <a class="nm-a" href="gallery.html"> Gallery </a> </li>
+				<li> <button class="nm-a" onclick="window.open('pdfs/magazine.pdf', '_self')"> Magazine </button> </li>
+			</ul>
+		</nav>
+
+		<!--   CALENDAR SECTION   -->
+		<div class="calendar">
+			<div>
+				<h3 class="m-heading"> Event Calendar | 2021 - 2022 </h3>
+				<div class="hero"> <div id="calendar"></div> </div>
+			</div>
+		</div>
+	</div>
+
+	<!--   FOOTER   -->
+	<div class="slanting">
+		<div class="s-down"> <footer class="footer"> Designed and Developed by the students of ECE Department </footer> </div>
+	</div>
+
+	<!--   JAVASCRIPT   -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+	<script src="calendar/evo-calendar.min.js"></script>
+	<script src="css-js/navbar_script.js"></script>
+	<script>
+		$(document).ready(function() { $('#calendar').evoCalendar({ theme: "Midnight Blue", calendarEvents: [{
+				id: 'event1',
+				name: "ECE Association Inauguration",
+				date: "August/23/2021",
+				description: "ECE Association Inauguration",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event2',
+				name: "Literary Events Contest",
+				date: "August/31/2021",
+				description: "Literary Events Contest - Essay Writing, JAM, Quiz (II-ECE)",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event3',
+				name: "Teachers' Day Celebration",
+				date: "September/4/2021",
+				description: "Virtual Teachers' Day Celebration",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event4',
+				name: "Dr. S. R. Ranganathan Trophy",
+				date: "September/15/2021",
+				description: "Dr. S. R. Ranganathan Trophy",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event5',
+				name: "Short Film Contest",
+				date: "September/25/2021",
+				description: "<u>Theme:</u> <b>'Importance of Blended Learning in the era of Digital Education'</b>",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event6',
+				name: "APP Challenge Contest",
+				date: "October/4/2021",
+				description: "VCET-ECE APP Challenge Contest",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event7',
+				name: "Poster Presentation Contest",
+				date: "October/20/2021",
+				description: "Online Poster Presentation Contest.<br><br><u>Topic:</u> <b>'Recent Technology Evolution in Electronic Gadgets'</b>",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event8',
+				name: "Coding Contest",
+				date: "October/22/2021",
+				description: "Code Jam  and Debugging Contest",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event9',
+				name: "Adzap Contest",
+				date: "January/22/2022",
+				description: "Adzap Contest",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event10',
+				name: "Paper Presentation Contest",
+				date: "January/29/2022",
+				description: "Intradepartmental Paper Presentation Contest",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event11',
+				name: "Best Collage Maker Award Contest",
+				date: "February/11/2022",
+				description: "Best Collage Maker Award Contest",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event12',
+				name: "Hardware Hackathon Contest",
+				date: "February/26/2022",
+				description: "Hardware Hackathon Contest - II ECE",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event13',
+				name: "Hardware Hackathon Contest",
+				date: "March/07/2022",
+				description: "Hardware Hackathon Contest - III ECE",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event14',
+				name: "Web Page Design Contest",
+				date: "March/11/2022",
+				description: "Web Page Design Contest",
+				type: "event",
+				color: "#63d867"
+			}, {
+				id: 'event15',
+				name: "ECE Association Valedictory",
+				date: "March/26/2022",
+				description: "ECE Association Valedictory",
+				type: "event",
+				color: "#63d867"
+		}] }) })
+	</script>
+</body>
+</html>

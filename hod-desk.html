@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> ECE | HOD DESK </title>
+	<link rel="stylesheet" href="css-js/reset_stylesheet.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/af6f00cd8e.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css-js/portrait_stylesheet.css" media="screen and (orientation: portrait)">
+	<link rel="stylesheet" href="css-js/landscape_stylesheet.css" media="screen and (orientation: landscape)">
+</head>
+
+<body>
+	<!--   HEADER   -->
+	<div class="slanting">
+		<div class="s-up">
+			<header class="header">
+				<div class="h-name">
+					<p class="hn-main"> Velammal College </p>
+					<p class="hn-sub"> of Engineering and Technology </p> </div>
+				<div class="h-icon"> <img class="hi-logo" src="other-images/logo.png"> </div>
+			</header>
+		</div>
+	</div>
+
+	<!--   CONTAINER   -->
+	<div class="container">
+		<!--   DEPARTMENT BANNER   -->
+		<section class="section" style="background-image: url('other-images/ece.png');"> Electronics <br> And Communication <br> Engineering </section>
+
+		<div class="responsive">
+			<!--   LEFT SECTION FOR RESPONSIVE   -->
+			<div class="r-left">
+				<!--   NAVIGATION BAR   -->
+				<nav class="nav-bar">
+					<p class="n-text"> ECE Dept. Association </p>
+					<div class="n-button"> <button id="nb-btn"> <p class="nb-hidden"> ☰ </p> <p class="nb-right"> HOD's Desk </p> </button> </div>
+					<ul id="n-menu">
+						<li> <a class="nm-a" href="index.html"> Home </a> </li>
+						<li> <a class="nm-a" href="vision-mission.html"> Vision & Mission </a> </li>
+						<li> <a class="nm-a" href="peo-pso.html"> PEO & PSO </a> </li>
+						<li> <a class="nm-a" href="programme-outcomes.html"> Programme Outcomes </a> </li>
+						<li> <a class="nm-a" href="project-research.html"> Project & Research </a> </li>
+						<li> <a class="nm-a" href="calendar.html"> Calendar </a> </li>
+						<li> <a class="nm-a" href="gallery.html"> Gallery </a> </li>
+						<li> <button class="nm-a" onclick="window.open('pdfs/magazine.pdf', '_self')"> Magazine </button> </li>
+					</ul>
+				</nav>
+			</div>
+
+			<!--   RIGHT SECTION FOR RESPONSIVE   -->
+			<div class="r-right">
+				<!--   IMAGE SLIDER   -->
+				<div class="slideshow">
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-01.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-02.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-03.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-04.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-05.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-06.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-07.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-08.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-09.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-10.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-11.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-12.jpg"> </div>
+					<div class="s-slides s-fade"> <img class="ss-images" src="slider-images/slider-13.jpg"> </div>
+				</div>
+
+				<!--   MAIN SECTION   -->
+				<main class="main">
+					<div>
+						<h3 class="m-heading"> HOD's Desk </h3>
+						<p class="m-content"> <img class="mc-hod" src="other-images/hod.png"> A hearty welcome to the Department of Electronics and Communication Engineering, Velammal College of Engineering and Technology, Madurai. Since its inception in 2007, the department of ECE has been the front runner in imparting quality technical education to the students. The department has well qualified and motivated faculty members passionate towards moulding the younger generation. The rich technical ambience, highly enthused faculty members, state of the art laboratories and the able support from the management have made the students perform with distinction in their career pursuit. Moreover, the department of ECE is making huge strides in Research and Development. It has procured funded projects from DRDO, AICTE and DST to the tune of Rs. 1.31 crores in a short span of three years. Students relish the placement in top MNC companies like TCS, CS, Wipro, Accenture, Aricent, HP, UST Global, Zoho, Athena Healthcare, etc. The department also has a worldwide reach with its vibrant alumni network. Working shoulder with shoulder with the institution, it is constantly aiming towards reaching greater heights to serve the needs of the society and meet the aspirations of the student community. </p>
+						<p style="clear: both"></p>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+
+	<!--   FOOTER   -->
+	<div class="slanting">
+		<div class="s-down"> <footer class="footer"> Designed and Developed by the students of ECE Department </footer> </div>
+	</div>
+
+	<!-- JAVASCRIPT   -->
+	<script src="css-js/navbar_script.js"></script>
+	<script>
+		/*   AUTOMATIC SLIDER   */
+		var slider_index = 0;
+		slideshow();
+		function slideshow() {
+			var slides = document.getElementsByClassName("s-slides");
+			for (var i = 0; i < slides.length; i++)
+				slides[i].style.display = "none";
+			slider_index++;
+			if (slider_index > slides.length)
+				slider_index = 1
+			slides[slider_index - 1].style.display = "block";
+			setTimeout(slideshow, 3000);
+		}
+	</script>
+</body>
+</html>
